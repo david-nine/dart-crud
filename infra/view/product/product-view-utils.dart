@@ -3,7 +3,7 @@ import 'dart:io';
 class ProductViewUtils {
   static Map<String, String> inputProduct(Stdin terminal) {
     print('Digite o nome do produto');
-    String nome = terminal.readLineSync() ?? "";
+    String name = terminal.readLineSync() ?? "";
 
     print('Digite a descrição do produto');
     String description = terminal.readLineSync() ?? "";
@@ -12,7 +12,7 @@ class ProductViewUtils {
     String value = terminal.readLineSync() ?? "";
 
     Map<String, String> data = {
-      'name': nome,
+      'name': name,
       'description': description,
       'value': value,
     };
