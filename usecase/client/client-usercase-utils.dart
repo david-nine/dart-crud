@@ -6,7 +6,11 @@ class ClientUsecaseUtils {
   static Client createClient(Map<String, String> data) {
     String name = data['name'] ?? "";
     String cpf = data['cpf'] ?? "";
-    int number = int.parse(data['number'] ?? "0");
+
+    int number = 0;
+    if (!(data['number'] ?? "0").isEmpty) {
+      number = int.parse(data['number'] ?? "0");
+    }
     String publicPlace = data['publicPlace'] ?? "";
     String neighborhood = data['neighborhood'] ?? "";
     String city = data['city'] ?? "";
@@ -35,9 +39,9 @@ class ClientUsecaseUtils {
     }
 
     if (client.name == '') {
-      errors.add('O cpf é obrigatório');
+      errors.add('O CPF é obrigatório');
     } else if (client.cpf.length != 11) {
-      errors.add('O cpf deve ter 11 caracteres');
+      errors.add('O CPF deve ter 11 caracteres');
     }
 
     errors.addAll(validateAddress(client.address!));
@@ -55,13 +59,10 @@ class ClientUsecaseUtils {
     if (address.city == "") {
       errors.add('A cidade é obrigatória');
     }
-    if (address.complement == "") {
-      errors.add('O complemento é obrigatório');
-    }
     if (address.neighborhood == "") {
       errors.add('O bairro é obrigatório');
     }
-    if (address.number == "") {
+    if (address.number == 0) {
       errors.add('O número é obrigatório');
     }
     if (address.publicPlace == "") {

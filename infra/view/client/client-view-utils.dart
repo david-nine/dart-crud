@@ -18,10 +18,10 @@ class ClientViewUtils {
     print('Digite o bairro do cliente');
     String neighborhood = terminal.readLineSync() ?? "";
 
-    print('Digite o logradouro da casa do cliente');
+    print('Digite o logradouro');
     String publicPlace = terminal.readLineSync() ?? "";
 
-    print('Digite o complemento da casa do cliente');
+    print('Digite o complemento');
     String complement = terminal.readLineSync() ?? "";
 
     print('Digite o número da casa do cliente');
