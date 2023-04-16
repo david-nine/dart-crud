@@ -1,4 +1,4 @@
-import '../../app/domain/client/service.dart';
+import '../../app/domain/client/client-service.dart';
 
 class ClientFindByNameUseCase {
   execute(Map<String, dynamic> context) {

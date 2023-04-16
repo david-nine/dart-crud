@@ -1,4 +1,4 @@
-import '../../app/domain/product/service.dart';
+import '../../app/domain/product/product-service.dart';
 
 class ProductFindByNameUseCase {
   execute(Map<String, dynamic> context) {

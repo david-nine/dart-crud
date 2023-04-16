@@ -7,24 +7,45 @@ class CreateClientView extends View {
   render(Map<String, dynamic> context) {
     Stdin terminal = context['terminal'];
 
-    print('########################');
-    print('N O V O   P R O D U T O');
-    print('########################');
+    print('#######################');
+    print('N O V O   C L I E N T E');
+    print('#######################');
     print('');
 
-    print('Digite o nome do produto');
-    String nome = terminal.readLineSync() ?? "";
+    print('Digite o nome do cliente');
+    String name = terminal.readLineSync() ?? "";
 
-    print('Digite a descrição do produto');
-    String description = terminal.readLineSync() ?? "";
+    print('Digite o CPF do cliente');
+    String cpf = terminal.readLineSync() ?? "";
 
-    print('Digite o valor do produto');
-    String value = terminal.readLineSync() ?? "";
+    print('Informe o endereço do cliente');
+    print('Digite o cep do cliente');
+    String cep = terminal.readLineSync() ?? "";
+
+    print('Digite a cidade do cliente');
+    String city = terminal.readLineSync() ?? "";
+
+    print('Digite o bairro do cliente');
+    String neighborhood = terminal.readLineSync() ?? "";
+
+    print('Digite o logradouro da casa do cliente');
+    String publicPlace = terminal.readLineSync() ?? "";
+
+    print('Digite o complemento da casa do cliente');
+    String complement = terminal.readLineSync() ?? "";
+
+    print('Digite o número da casa do cliente');
+    String number = terminal.readLineSync() ?? "";
 
     Map<String, String> data = {
-      'name': nome,
-      'description': description,
-      'value': value,
+      'name': name,
+      'cpf': cpf,
+      'cep': cep,
+      'city': city,
+      'neighborhood': neighborhood,
+      'publicPlace': publicPlace,
+      'complement': complement,
+      'number': number,
     };
 
     ClientCreateUseCase().execute({...context, 'data': data});

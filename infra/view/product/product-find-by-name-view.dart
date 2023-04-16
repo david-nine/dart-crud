@@ -2,7 +2,7 @@ import 'dart:io';
 
 import '../../../app/domain/product/product-entity.dart';
 import '../../../usecase/product/find-by-name-product-usecase.dart';
-import 'view.dart';
+import '../view.dart';
 
 class ProductFindByNameView extends View {
   @override
@@ -24,7 +24,7 @@ class ProductFindByNameView extends View {
     } else {
       for (Product product in products) {
         print(
-            '${product.id}, ${product.name}, ${product.email}, ${product.phone}');
+            '${product.id}, ${product.name}, ${product.description}, ${product.value}');
       }
     }
   }

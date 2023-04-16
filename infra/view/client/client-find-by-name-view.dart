@@ -2,7 +2,7 @@ import 'dart:io';
 
 import '../../../app/domain/client/client-entity.dart';
 import '../../../usecase/client/find-by-name-client-usecase.dart';
-import 'view.dart';
+import '../view.dart';
 
 class ClientFindByNameView extends View {
   @override
@@ -24,7 +24,8 @@ class ClientFindByNameView extends View {
     } else {
       for (Client client in clients) {
         print(
-            '${client.id}, ${client.name}, ${client.email}, ${client.phone}');
+            '${client.id}, ${client.name}, ${client.cpf}, Endereço: ${client.address?.cep},'
+            '${client.address?.city}, ${client.address?.neighborhood}, ${client.address?.complement}, ${client.address?.publicPlace}, ${client.address?.number}');
       }
     }
   }

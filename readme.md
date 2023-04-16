@@ -37,6 +37,6 @@ Foi utilizada uma variação do padrão de arquitetura Hexagonal para permir a s
  
 
 ## Autor
-**Felipe da Rosa Oliveira**
+**David Hildebrandt**
 
 

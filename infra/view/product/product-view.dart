@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'product-create-view.dart';
+import 'product-find-by-name-view.dart';
 import 'product-list-view.dart';
 import '../view.dart';
 
@@ -39,10 +40,12 @@ class ProductView extends View {
         break;
       case 3:
         break;
+      case 4:
+        ProductFindByNameView().render(context);
+        break;
       case 5:
         break;
       case 6:
-
         break;
       default:
         print('Opção Inválida');

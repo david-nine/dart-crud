@@ -15,8 +15,7 @@ class ListClientView extends View {
 
     for (Client client in clients) {
       print(
-          '${client.id}, ${client.name}, ${client.cpf}, Endereço: ${client.address?.number}, ${client.address?.publicPlace}, ${client.address?.complement}, ${client.address?.neighborhood}, ${client.address?.city}, ${client.address?.cep}'
-        );
+          '${client.id}, ${client.name}, ${client.cpf}, Endereço: ${client.address?.cep}, ${client.address?.publicPlace}, ${client.address?.complement}, ${client.address?.neighborhood}, ${client.address?.city}, ${client.address?.number}');
     }
   }
 }
