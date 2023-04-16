@@ -1,9 +1,11 @@
 import 'dart:io';
 
 import 'product-create-view.dart';
+import 'product-delete-view.dart';
 import 'product-find-by-name-view.dart';
 import 'product-list-view.dart';
 import '../view.dart';
+import 'product-update-view.dart';
 
 class ProductView extends View {
   @override
@@ -12,8 +14,12 @@ class ProductView extends View {
     Stdin terminal = context['terminal'];
     while (option != 6) {
       menu();
-      option = int.parse(terminal.readLineSync() ?? "0");
-      executeOption(option, context);
+      try {
+        option = int.parse(terminal.readLineSync() ?? "0");
+        executeOption(option, context);
+      } on FormatException {
+        print('Opção inválida');
+      }
     }
   }
 
@@ -39,11 +45,13 @@ class ProductView extends View {
         CreateProductView().render(context);
         break;
       case 3:
+        ProductUpdateView().render(context);
         break;
       case 4:
         ProductFindByNameView().render(context);
         break;
       case 5:
+        ProductDeleteView().render(context);
         break;
       case 6:
         break;

@@ -1,4 +1,4 @@
-# Projeto CONTATOS DART
+# Projeto CURD DART
 
 ## [Licença MIT](/LICENSE) 
 
@@ -24,7 +24,7 @@ Foi utilizada uma variação do padrão de arquitetura Hexagonal para permir a s
  ## Features
  
  ###  Cadastro de contatos
-      Foram implementatos as ações básicas para o gerenciamento do cadastro de contatos em memória
+      Foram implementatos as ações básicas para o gerenciamento do cadastro de clientes e produtos em memória
       
 
       

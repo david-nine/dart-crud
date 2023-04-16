@@ -4,7 +4,11 @@ class Product {
   String _description = '';
   double _value = 0.0;
 
-  Product({int id = 0, required String name, required double value, String description = ''}) {
+  Product(
+      {int id = 0,
+      required String name,
+      required double value,
+      String description = ''}) {
     this._id = id;
     this._name = name;
     this._value = value;
@@ -16,7 +20,6 @@ class Product {
   String get name => _name;
 
   void set name(String name) {
-    print('teste');
     this._name = name;
   }
 

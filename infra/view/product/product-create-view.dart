@@ -1,6 +1,8 @@
 import 'dart:io';
+import '../../../usecase/common/validation-exception.dart';
 import '../../../usecase/product/create-product-usecase.dart';
 import '../view.dart';
+import 'product-view-utils.dart';
 
 class CreateProductView extends View {
   @override
@@ -12,21 +14,15 @@ class CreateProductView extends View {
     print('##########################');
     print('');
 
-    print('Digite o nome do produto');
-    String nome = terminal.readLineSync() ?? "";
+    Map<String, String> productData = ProductViewUtils.inputProduct(terminal);
 
-    print('Digite a descrição do produto');
-    String description = terminal.readLineSync() ?? "";
-
-    print('Digite o valor do produto');
-    String value = terminal.readLineSync() ?? "";
-
-    Map<String, String> data = {
-      'name': nome,
-      'description': description,
-      'value': value,
-    };
-
-    ProductCreateUseCase().execute({...context, 'data': data});
+    try {
+      ProductCreateUseCase().execute({...context, 'data': productData});
+    } on ValidationException catch (e) {
+      print('Erro ao atualizar o Produto');
+      for (String error in e.errors) {
+        print(error);
+      }
+    }
   }
 }

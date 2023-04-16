@@ -6,7 +6,11 @@ class Client {
   String _cpf = '';
   Address? _address;
 
-  Client({int id = 0, required String name, required String cpf, required Address address}) {
+  Client(
+      {int id = 0,
+      required String name,
+      required String cpf,
+      required Address address}) {
     this._id = id;
     this._name = name;
     this._cpf = cpf;
