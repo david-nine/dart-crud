@@ -1,10 +1,10 @@
-import '../../app/domain/product/product-service.dart';
+import '../../app/domain/client/client-service.dart';
 import '../common/object-not-found.dart';
 import '../common/validation-exception.dart';
 
-class ProductDeleteUsecase {
+class ClientDeleteUsecase {
   execute(Map<String, dynamic> context) {
-    ProductService service = context['productService'];
+    ClientService service = context['clientService'];
 
     String id = context['id'] ?? "";
 

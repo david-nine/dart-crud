@@ -1,6 +1,5 @@
 import '../../app/domain/product/product-entity.dart';
 import '../../app/domain/product/product-service.dart';
-import '../common/validation-exception.dart';
 import 'product-usercase-utils.dart';
 
 class ProductCreateUseCase {

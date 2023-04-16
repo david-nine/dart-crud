@@ -20,4 +20,27 @@ class ClientService {
             client.name.toLowerCase().startsWith(name.toLowerCase()))
         .toList();
   }
+
+  int update(int id, Client client) {
+    Client? existedClient = this.findById(id);
+
+    if (existedClient == null) {
+      return 0;
+    } else {
+      existedClient.name = client.name;
+      existedClient.cpf = client.cpf;
+      existedClient.address = client.address;
+      return 1;
+    }
+  }
+
+  int delete(int id) {
+    Client? client = findById(id);
+    if (client == null) {
+      return 0;
+    } else {
+      this._clients.remove(client);
+      return 1;
+    }
+  }
 }

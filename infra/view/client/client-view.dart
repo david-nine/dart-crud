@@ -1,8 +1,10 @@
 import 'dart:io';
 
-import 'client-create-view.dart';
-import 'client-list-view.dart';
 import '../view.dart';
+import 'client-create-view.dart';
+import 'client-find-by-name-view.dart';
+import 'client-list-view.dart';
+import 'client-update-view.dart';
 
 class ClientView extends View {
   @override
@@ -24,7 +26,7 @@ class ClientView extends View {
     print('1 - Listar Clientes');
     print('2 - Criar novo Cliente');
     print('3 - Atualizar Cliente');
-    print('4 - Pesquisar Produto');
+    print('4 - Pesquisar Cliente');
     print('5 - Apagar Cliente');
     print('6 - Voltar');
   }
@@ -38,11 +40,14 @@ class ClientView extends View {
         CreateClientView().render(context);
         break;
       case 3:
+        ClientUpdateView().render(context);
+        break;
+      case 4:
+        ClientFindByNameView().render(context);
         break;
       case 5:
         break;
       case 6:
-        
         break;
       default:
         print('Opção Inválida');
