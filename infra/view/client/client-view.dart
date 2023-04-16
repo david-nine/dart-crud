@@ -2,6 +2,7 @@ import 'dart:io';
 
 import '../view.dart';
 import 'client-create-view.dart';
+import 'client-delete-view.dart';
 import 'client-find-by-name-view.dart';
 import 'client-list-view.dart';
 import 'client-update-view.dart';
@@ -12,9 +13,12 @@ class ClientView extends View {
     var option = -1;
     Stdin terminal = context['terminal'];
     while (option != 6) {
-      menu();
-      option = int.parse(terminal.readLineSync() ?? "0");
-      executeOption(option, context);
+      try {
+        option = int.parse(terminal.readLineSync() ?? "0");
+        executeOption(option, context);
+      } on FormatException {
+        print('Opção inválida');
+      }
     }
   }
 
@@ -46,6 +50,7 @@ class ClientView extends View {
         ClientFindByNameView().render(context);
         break;
       case 5:
+        ClientDeleteView().render(context);
         break;
       case 6:
         break;

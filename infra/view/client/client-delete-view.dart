@@ -4,7 +4,7 @@ import '../../../usecase/client/client-delete-usecase.dart';
 import '../../../usecase/common/object-not-found.dart';
 import '../view.dart';
 
-class ProductDeleteView extends View {
+class ClientDeleteView extends View {
   @override
   render(Map<String, dynamic> context) {
     Stdin terminal = context['terminal'];

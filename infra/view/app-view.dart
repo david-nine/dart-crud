@@ -11,8 +11,12 @@ class AppView extends View {
     Stdin terminal = context['terminal'];
     while (option != 3) {
       menu();
-      option = int.parse(terminal.readLineSync() ?? "0");
-      executeOption(option, context);
+      try {
+        option = int.parse(terminal.readLineSync() ?? "0");
+        executeOption(option, context);
+      } on FormatException {
+        print('Opção inválida');
+      }
     }
   }
 
